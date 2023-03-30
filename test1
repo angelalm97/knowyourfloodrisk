@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Bubbles Test</title>
+		<script src="https://d3js.org/d3.v4.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<style type="text/css">
+
+		h1 {
+			font-family: 'Open Sans', sans-serif;
+      font-size:24px;
+      color:black;
+      font-weight:500;
+		}
+
+    p {
+			font-family: 'Open Sans', sans-serif;
+			font-size:16px;
+			color:black;
+			font-weight:300;
+		}
+		hr.new1 {
+  		border-top: 3px dotted #BAFF29;
+			opacity: 1;
+			background-color: transparent;
+		}
+
+		.text-styling {
+			font-family: 'Open Sans', sans-serif;
+			font-size:14px;
+			color:black;
+			font-weight:300;
+		}
+
+		.label-styling {
+			font-family: 'Open Sans', sans-serif;
+			font-size:14px;
+			color:black;
+			font-weight:300;
+		}
+
+		.title-styling {
+			font-family: 'Open Sans', sans-serif;
+			font-size:18px;
+			color:black;
+			font-weight:500;
+		}
+
+
+		.highlightborderdash{
+			border: 3px dotted #BAFF29;
+			background-color: white;
+			margin: 10px;
+			padding: 10px;
+		}
+
+		</style>
+
+		</head>
+		<body>
+        <main>
+					<section class="container">
+						<div class="row">
+								<div class="col">
+									<div class="my-3">
+					     			<h1 class="text-uppercase text-center">Visualizing Agricultural Land</h1>
+										<hr class= "new1">
+									</div>
+								</div>
+						<div class="row">
+							  <div class="col-5">
+									<div class="mt-5" class>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+											<div class="highlightborderdash">
+												<p class = "my-0"> <b>11.154 Big Data, Visualization and Society</b> </p>
+												<p class = "my-0"> <b>Name:</b> Kailin Jones</p>
+												<p class = "my-0"> <b>Assignment:</b> PSET07 - D3 Visualization Webpage</p>
+											</div>
+									</div>
+								</div>
+								<div class="col-7">
+									<div id="my_dataviz"></div>
+								</div>
+
+        </main>
+      <script>
+        // load csv data
+
+        var width = 450
+var height = 450
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+  .append("svg")
+    .attr("width", 450)
+    .attr("height", 450)
+
+// create dummy data -> just one element per circle
+var data = [{ "name": "A", "group": 1, "hh_size": 1 }, { "name": "B", "group": 1 }, { "name": "C", "group": 1 }, { "name": "D", "group": 1 }, { "name": "E", "group": 1 }, { "name": "F", "group": 1 },
+            { "name": "G", "group": 2 }, { "name": "H", "group": 2 }, { "name": "I", "group": 2 }, { "name": "J", "group": 2 }, { "name": "K", "group": 2 }, { "name": "L", "group": 2 },
+            { "name": "M", "group": 3 }, { "name": "N", "group": 3 }, { "name": "O", "group": 3 }]
+
+// A scale that gives a X target position for each group
+var x = d3.scaleOrdinal()
+  .domain([1, 2, 3])
+  .range([50, 200, 340])
+
+// A color scale
+var color = d3.scaleOrdinal()
+  .domain([1, 2, 3])
+  .range([ "#F8766D", "#00BA38", "#619CFF"])
+
+var color = d3.scaleOrdinal()
+  .domain([1, 2, 3])
+  .range([ "#F8766D", "#00BA38", "#619CFF"])
+
+// Initialize the circle: all located at the center of the svg area
+var node = svg.append("g")
+  .selectAll("circle")
+  .data(data)
+  .enter()
+  .append("circle")
+    .attr("r", d => d.hh_size/23)
+    .attr("cx", width / 2)
+    .attr("cy", height / 2)
+    .style("fill", function(d){ return color(d.hh_size)})
+    .style("fill-opacity", 0.8)
+    .attr("stroke", "black")
+    .style("stroke-width", 4)
+    .call(d3.drag() // call specific function when circle is dragged
+         .on("start", dragstarted)
+         .on("drag", dragged)
+         .on("end", dragended));
+
+
+
+		</script>
+	</body>
+</html>
