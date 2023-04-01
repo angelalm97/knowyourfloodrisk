@@ -38,6 +38,18 @@
                 <input type="number" name="age" id="number" min="1" max="1000" placeholder="Enter Your Expected Holding Period">
             </div>
 
+            <div class="form-group">
+                <label for="rating">What best describes your Tenant Relationship?</label>
+                <div class="radio-group">
+                    <input type="radio" name="rating" id="never" value="never"><label for="never"> Primary Residence Owner</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="rating" id="likely" value="likely"><label for="likely"> Secondary Residence Owner</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="rating" id="maybe" value="maybe"><label for="maybe"> Tenant (lease/rented)</label>
+                </div>
+            </div>
 <br>
 
           <h3 id="response">  Based on your Address We See the Following Characteristics, we see the following Risk-level: </h3>
@@ -46,16 +58,16 @@
             height = "300"
           />
 
-          <h3 id="response">  Based on your Address We See the Following Characteristics, we see the following Risk-level: </h3>
-          <img src="FEMA Map Viewer.png"
+          <h3 id="response">  Given Your Holding Period and Flood Zone, Your Expected Risk Level Is </h3>
+          <img src="floodrisk.png"
             width: "200"
-            height = "300"
+            height = "100"
           />
 
 
 
-
-          <p id="response">  While risk assessments can seem vague, let use take a minute to see how this exposure relates to your property-level preparedness....</p>
+<br>
+          <h3 id="response">  While risk assessments can seem vague, let use take a minute to see how this exposure relates to your property-level preparedness....</h3>
 
 
 <br> <br> <br>
@@ -80,39 +92,56 @@
                     <option value="Other">Other</option>
                 </select>
 
+                <div class="form-group">
+                    <label for="rating">What best describes your Construction Type?</label>
+                    <div class="radio-group">
+                        <input type="radio" name="rating" id="never" value="never"><label for="never"> Masonry</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" name="rating" id="maybe" value="maybe"><label for="maybe"> Frame</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" name="rating" id="likely" value="likely"><label for="likely"> Other</label>
+                    </div>
+                </div>
 
             <div class="form-group">
                 <label for="age" id="number-label">What is your estimated Ground-Level Elevation Relative to your Height (ft)?</label>
-                <input type="number" name="age" id="number" min="1" max="99" placeholder="Enter Your Age">
-            </div>
-
-
-            <div class="form-group">
-                <label for="rating">Would You Recommend Our Product To A Friend ?</label>
-                <div class="radio-group">
-                    <input type="radio" name="rating" id="never" value="never"><label for="never"> Never </label>
-                </div>
-                <div class="radio-group">
-                    <input type="radio" name="rating" id="maybe" value="maybe"><label for="maybe"> Maybe </label>
-                </div>
-                <div class="radio-group">
-                    <input type="radio" name="rating" id="likely" value="likely"><label for="likely"> Likely </label>
-                </div>
-                <div class="radio-group">
-                    <input type="radio" name="rating" id="definitely" value="definitely"><label for="definitely">
-                        Definitely
-                    </label>
-                </div>
+                <input type="number" name="age" id="number" min="1" max="99" placeholder="In Feet">
             </div>
 
             <div class="form-group">
-                <label for="liked">Select Things That You Liked About Our Product</label>
+                <label for="rating">What best describes your Foundation Type?</label>
+                <div class="radio-group">
+                    <input type="radio" name="rating" id="never" value="never"><label for="never"> Slab on Grade</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="rating" id="maybe" value="maybe"><label for="maybe"> Basement (non-elevated)</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="rating" id="likely" value="likely"><label for="likely"> Crawlspace (elevated, including non-elevated sub-grade crawlspace)</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="rating" id="likely" value="likely"><label for="likely"> Elevated without Enclosure on Post, Pile, or Pier</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="rating" id="likely" value="likely"><label for="likely"> Elevated with Enclosure on Post, Pile, or Pier</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="rating" id="likely" value="likely"><label for="likely"> Elevated with Enclosure not Post, Pile, or Pier</label>
+                </div>
+
+
+            </div>
+
+            <div class="form-group">
+                <label for="liked">Select Things That You Have Ready in Case of a Disaster</label>
                 <div class="checkbox-group">
                     <input type="checkbox" name="liked" id="ui" value="ui"><label for="ui">
                         <svg class="check-mark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <polyline class="check-mark-svg-path" points="25.5,53.5 39.5,67.5 72.5,34.5 " />
                         </svg>
-                        <span>UI</span>
+                        <span>Flood Gates</span>
                     </label>
                 </div>
                 <div class="checkbox-group">
@@ -120,7 +149,7 @@
                         <svg class="check-mark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <polyline class="check-mark-svg-path" points="25.5,53.5 39.5,67.5 72.5,34.5 " />
                         </svg>
-                        <span>Features</span>
+                        <span>DIY Barriers (eg. Sandbags) </span>
                     </label>
                 </div>
                 <div class="checkbox-group">
@@ -128,7 +157,7 @@
                         <svg class="check-mark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                             <polyline class="check-mark-svg-path" points="25.5,53.5 39.5,67.5 72.5,34.5 " />
                         </svg>
-                        <span>Service</span>
+                        <span>Food to last 5+ days</span>
                     </label>
                 </div>
                 <div class="checkbox-group">
@@ -137,19 +166,28 @@
                             <polyline class="check-mark-svg-path" points="25.5,53.5 39.5,67.5 72.5,34.5 " />
                         </svg>
 
-                        <span>Simpleness</span>
+                        <span>Electrical Generator/Back-up Battery</span>
                     </label>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="remark">Remarks</label>
-                <textarea name="remark" id="remark" placeholder="Tell Us How Can We Improve.."></textarea>
-            </div>
 
-            <div class="form-group">
-                <button id="submit" type="submit">Submit</button>
-            </div>
+            <br> <br> <br>
+                                <h2 id="description">Part 3: Connecting Vulnerability to Pre-Disaster Mitigation and Adaptation</h2>
+<br>
+<h3 id="description">This section will link to remarks and possible home improvements to consider, funding sources, NGOs, potential partners</h3>
+
+
+                                <div class="form-group">
+                                    <label for="remark">Remarks</label>
+                                    <textarea name="remark" id="remark" placeholder="Anything Else you Want to Share"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <button id="submit" type="submit">Submit</button>
+                                </div>
+
+
         </form>
     </main>
 </body>
